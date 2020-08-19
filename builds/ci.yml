@@ -16,5 +16,8 @@ extends:
   parameters:
     buildSteps:
       - script: echo Compiling my code
+        displayName: Compile
       - script: echo Testing my code
+        displayName: Test
       - script: echo Package my code
+        displayName: Package
