@@ -5,6 +5,7 @@ resources:
   repositories:
     - repository: templateRepo
       type: github
+      endpoint: gitHubEndpoint
       name: dmckinstry/PipelineTemplates
 
 pool:
