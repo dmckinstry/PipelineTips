@@ -14,7 +14,7 @@ pool:
 extends:
   template: extends/template.yml@templateRepo
   parameters:
-    steps:
+    buildSteps:
       - script: echo Compiling my code
       - script: echo Testing my code
       - script: echo Package my code
