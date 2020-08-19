@@ -9,7 +9,7 @@ resources:
       name: dmckinstry/PipelineTemplates
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'ubuntu-16.04'
 
 extends:
   template: extends/template.yml@templateRepo
