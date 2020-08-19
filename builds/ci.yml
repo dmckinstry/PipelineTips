@@ -1,0 +1,19 @@
+trigger:
+- master
+
+resources:
+  repositories:
+    - repository: templateRepo
+      type: github
+      name: dmckinstry/PipelineTemplates
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+extends:
+  template: extends/template.yml@templateRepo
+  parameters:
+    steps:
+      - script: echo Compiling my code
+      - script: echo Testing my code
+      - script: echo Package my code
