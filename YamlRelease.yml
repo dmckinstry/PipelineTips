@@ -1,0 +1,25 @@
+trigger:
+- master
+
+stages:
+- stage:
+  pool:
+    vmImage: 'ubuntu-latest'
+  jobs:
+  - job: DeployAndTest
+    displayName: 'Test'
+    steps:
+    - script: |
+        echo Deploy QA
+        echo Run Tests
+
+- stage:
+  pool:
+    vmImage: 'ubuntu-latest'
+  jobs:
+  - job: ProductionDeploy
+    displayName: 'Prod'
+    steps:
+    - script: |
+        echo Deploy Production
+        echo Run Tests
