@@ -1,25 +1,33 @@
-trigger:
-- master
+resources:
+  pipelines:
+  - pipeline: pipelineTrigger
+    source: GitHubTemplates 
+    trigger: 
+      branches:
+      - releases/*
+      - master
 
 stages:
 - stage:
   pool:
     vmImage: 'ubuntu-latest'
   jobs:
-  - job: DeployAndTest
-    displayName: 'Test'
-    steps:
-    - script: |
-        echo Deploy QA
-        echo Run Tests
+  - deployment: DeployQA
+    environment: Dep-QA
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo Deploying the code!
 
 - stage:
   pool:
     vmImage: 'ubuntu-latest'
   jobs:
-  - job: ProductionDeploy
-    displayName: 'Prod'
-    steps:
-    - script: |
-        echo Deploy Production
-        echo Run Tests
+  - deployment: DeployProduction
+    environment: Dep-Prod
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo Deploying the code to production!
