@@ -1,11 +1,10 @@
 resources:
   pipelines:
   - pipeline: pipelineTrigger
-    source: GitHubTemplates 
-    trigger: 
-      branches:
-      - releases/*
-      - master
+    source: GitHubTemplates
+#    trigger: 
+#      branches:
+#      - master
 
 stages:
 - stage:
