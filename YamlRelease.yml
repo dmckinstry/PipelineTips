@@ -1,9 +1,12 @@
+trigger:
+  branches:
+    exclude:
+      - '*'
+
 resources:
   pipelines:
   - pipeline: pipelineTrigger
     source: GitHubTemplates
-    trigger:
-      enabled: false
 #    trigger: 
 #      branches:
 #      - master
