@@ -9,6 +9,9 @@ resources:
       branches:
       - master
 
+variables:
+  skipComponentGovernanceDetection: true
+
 stages:
 - stage:
   pool:
