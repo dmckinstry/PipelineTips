@@ -27,5 +27,5 @@ extends:
         displayName: Test
       - script: echo Package my code
         displayName: Package
-    publishArtifact: MyPackage
+    publishArtifact: $[eq(variables['Build.SourceBranch'], 'refs/heads/master')]
 
