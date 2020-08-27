@@ -1,6 +1,7 @@
-# Comment
 trigger:
 - master
+pr:
+- none
 
 resources:
   repositories:
