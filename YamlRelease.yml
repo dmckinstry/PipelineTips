@@ -21,6 +21,11 @@ stages:
         deploy:
           steps:
           - script: echo Deploying the code!
+  - job: TestQA
+    displayName: Verify deployment
+    dependsOn: DeployQA
+    steps:
+      - script: curl https://www.google.com
 
 - stage:
   pool:
