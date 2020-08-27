@@ -3,6 +3,9 @@ trigger:
 pr:
 - none
 
+variables:
+  skipComponentGovernanceDetection: true
+
 resources:
   repositories:
     - repository: templateRepo
