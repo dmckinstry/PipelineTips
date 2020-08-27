@@ -25,7 +25,7 @@ stages:
     displayName: Verify deployment
     dependsOn: DeployQA
     steps:
-      - script: curl https://www.google.com
+      - script: curl https://not-known-name.foo
 
 - stage:
   pool:
