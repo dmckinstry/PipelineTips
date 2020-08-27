@@ -17,8 +17,8 @@ resources:
 pool:
   vmImage: 'ubuntu-16.04'
 
-steps:
-- template: extends/template.yml@templateRepo
+extends:
+  template: extends/template.yml@templateRepo
   parameters:
     buildSteps:
       - script: echo Compiling my code
@@ -29,6 +29,3 @@ steps:
         displayName: Package
     publishArtifact: MyPackage
 
-- script: echo On the main branch
-  displayName: Master check
-  condition: $(isMain)
