@@ -23,9 +23,5 @@ extends:
         displayName: Test
       - script: echo Package my code
         displayName: Package
-      - task: PowerShell@2
-        inputs:
-          targetType: 'inline'
-          script: 'Start-Sleep -Seconds 65'
     publishArtifact: MyPackage
 
