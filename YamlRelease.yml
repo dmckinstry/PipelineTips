@@ -21,11 +21,12 @@ stages:
         deploy:
           steps:
           - script: echo Deploying the code!
+  # Doing a "ping" verification after the deploy since we don't have real tests
   - job: TestQA
     displayName: Verify deployment
     dependsOn: DeployQA
     steps:
-      - script: curl https://not-known-name.foo
+      - script: curl https://$(Agent.MachineName)/SomeVirtualRoot/SomeHealthCheck
 
 - stage:
   pool:
