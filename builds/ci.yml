@@ -5,7 +5,8 @@ pr:
 
 variables:
   skipComponentGovernanceDetection: true
-
+  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/master')] # runtime expression
+  
 resources:
   repositories:
     - repository: templateRepo
@@ -16,8 +17,8 @@ resources:
 pool:
   vmImage: 'ubuntu-16.04'
 
-extends:
-  template: extends/template.yml@templateRepo
+steps:
+- template: extends/template.yml@templateRepo
   parameters:
     buildSteps:
       - script: echo Compiling my code
@@ -28,3 +29,6 @@ extends:
         displayName: Package
     publishArtifact: MyPackage
 
+- script: echo On the main branch
+  displayName: Master check
+  condition: $(isMain)
