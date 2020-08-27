@@ -27,5 +27,7 @@ extends:
         displayName: Test
       - script: echo Package my code
         displayName: Package
-    publishArtifact: $[variables.isMain]
-
+  - ${{ if eq(variables.isMain, true ) }}:        
+    publishArtifact: MyPackage
+  - ${{ if eq(variables.isMain, false ) }}:        
+    publishArtifact: NotMyPackage
