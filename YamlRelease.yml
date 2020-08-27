@@ -1,12 +1,13 @@
 trigger: none
+pr: none
 
 resources:
   pipelines:
   - pipeline: pipelineTrigger
     source: GitHubTemplates
-    trigger: 
-      branches:
-      - master
+#     trigger: 
+#       branches:
+#       - master
 
 stages:
 - stage:
